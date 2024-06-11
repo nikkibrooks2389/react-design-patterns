@@ -1,0 +1,48 @@
+// types/User.ts---------------------------------------------------------------------------
+
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+    role: 'admin' | 'user';
+}
+
+// types/Product.ts----------------------------------------------------------------
+
+export interface Product {
+    id: number;
+    name: string;
+    price: number;
+    description: string;
+    inStock: boolean;
+}
+
+// types/global.d.ts----------------------------------------------------------------
+
+declare global {
+    interface Window {
+        myCustomProperty: string;
+    }
+}
+
+// Ensure the file is treated as a module
+export { };
+
+// types/react-app-env.d.ts----------------------------------------------------------------
+
+// <reference types="react-scripts" />
+
+declare module 'my-third-party-library' {
+    export function someFunction(): void;
+}
+
+// types/utilityTypes.ts----------------------------------------------------------------
+
+export type Nullable<T> = T | null;
+
+export type Optional<T> = T | undefined;
+
+export type APIResponse<T> = {
+    data: T;
+    error: string | null;
+};

@@ -1,0 +1,49 @@
+// In a React project, the helpers folder is used to store utility functions, commonly referred to as helper functions,
+// which are reusable pieces of code that perform specific tasks or calculations. These functions are designed to be generic
+// and can be used across different components and parts of the application to avoid code duplication and improve maintainability.
+
+//-----------------------------------------------------------------------------------------------------
+
+// Common Uses of the helpers Folder
+// Utility Functions:
+
+// Functions that perform common tasks like formatting dates, validating inputs, manipulating arrays or objects, etc.
+// Example: helpers/formatDate.js, helpers/validateEmail.js
+
+//-----------------------------------------------------------------------------------------------------
+
+// API Calls:
+
+// Functions to handle API requests and responses, such as fetching data from a server or submitting data.
+// Example: helpers/api.js
+
+//-----------------------------------------------------------------------------------------------------
+
+// Data Transformation:
+
+// Functions to transform or normalize data before using it in components.
+// Example: helpers/transformData.js
+
+//-----------------------------------------------------------------------------------------------------
+// Math and Calculations:
+
+// Functions to perform mathematical calculations or complex data processing.
+// Example: helpers/calculateTotal.js, helpers/computeStats.js
+
+//-----------------------------------------------------------------------------------------------------
+// String Manipulations:
+
+// Functions to manipulate or format strings.
+// Example: helpers/capitalize.js, helpers/slugify.js
+
+//-----------------------------------------------------------------------------------------------------
+// Example Structure
+// Here is an example of what a helpers folder might look like in a React project:
+
+// helpers/
+// ├── formatDate.js
+// ├── validateEmail.js
+// ├── api.js
+// ├── transformData.js
+// ├── calculateTotal.js
+// ├── capitalize.js

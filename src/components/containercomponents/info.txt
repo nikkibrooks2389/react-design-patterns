@@ -1,0 +1,59 @@
+
+The CurrentUserLoader component is a functional component that fetches the current user from the
+/current-user endpoint and passes it as a prop to its children components. It uses the useState hook to 
+create a state variable called user and the useEffect hook to run a side effect after the component has rendered.
+The side effect is an asynchronous function that fetches the current user and updates the user state variable with the response data. 
+The component then maps over its children components and clones them, passing the user prop to each valid React element.
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+The UserLoader component is a functional component in React that is responsible for fetching user data from an API
+ endpoint and passing it as a prop to its children components.
+
+Here's a quick summary of what the code does:
+
+It imports the necessary dependencies: axios for making HTTP requests, and React for creating React components.
+The UserLoader component is defined as a function that takes two props: userId and children.
+Inside the component, it uses the useState hook to create a state variable called user and initializes it with null. The user state will hold the fetched user data.
+The useEffect hook is used to run a side effect after the component has rendered. It takes a callback function as its first argument and an array of dependencies as its second argument. In this case, the dependency is userId, which means the side effect will be triggered whenever the userId prop changes.
+The callback function inside the useEffect hook is an asynchronous function that fetches user data from the API endpoint /users/${userId} using the axios.get method. It awaits the response and then updates the user state variable with the data from the response using the setUser function.
+The component returns JSX code wrapped in a fragment (<>...</>) to render multiple elements without a wrapper element.
+Inside the JSX code, it uses the React.Children.map method to iterate over the children prop, which represents the child components passed to UserLoader. For each child component, it checks if it is a valid React element using React.isValidElement. If it is, it clones the element and adds the user prop to it using React.cloneElement. This allows each child component to access the user data.
+Overall, the UserLoader component fetches user data asynchronously and provides it to its child components, allowing them to render based on the user data.
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+ResourceLoader - it is more flexcible than the userLoader. you can use the resource loader not just to fetch the users but and resource... a book. The modified code is a component called ResourceLoader. It is responsible for loading a resource from a given URL and passing it as a
+prop to its children components. The component takes three props: resourceUrl (the URL of the resource to load), 
+resourceName (the name of the prop to pass the loaded resource as), and children (the child components to render).
+Inside the component, it uses the useState hook to create a state variable called resource and initializes it with null. This state variable 
+will hold the loaded resource data. The useEffect hook is used to run a side effect after the component has rendered. 
+It takes a callback function as its first argument and an array of dependencies as its second argument. In this case,
+ the dependency is resourceUrl, which means the side effect will be triggered whenever the resourceUrl prop changes.
+The callback function inside the useEffect hook is an asynchronous function called fetchResource. It uses axios to make an HTTP GET 
+request to the specified resourceUrl. If the request is successful, it updates the resource state variable with the response data using the 
+setResource function. If there is an error, it logs an error message to the console.
+The component then returns JSX code wrapped in a fragment (<>...</>) to render multiple elements without a wrapper element. Inside the 
+JSX code, it uses the React.Children.map method to iterate over the children prop, which represents the child components passed to ResourceLoader. For each child component, it checks if it is a valid React element using React.isValidElement. If it is, it clones the element and adds the loaded resource as a prop using React.cloneElement.
+Overall, the ResourceLoader component fetches a resource from a URL and provides it as a prop to its child components, 
+allowing them to render based on the loaded resource data.
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+ DataSource. It is designed to fetch a resource from a specified URL and pass it as a prop to its child components.
+
+The component accepts three props: getData, resourceName, and children.
+it doesnt know where the data is coming from -- form the server, local storage, etc. It just knows that it will get the data from somewhere and pass it to the children components.
+
+getData is a function that fetches the resource data from a URL. It is set to a default empty function in case it is not provided.
+resourceName is the name of the prop that will be used to pass the loaded resource data to the child components.
+children represents the child components that will be rendered.
+Inside the component, it uses the useState hook to create a state variable called resource and initializes it with null. This state variable will hold the loaded resource data.
+
+The useEffect hook is used to run a side effect after the component has rendered. It takes a callback function as its first argument and an array of dependencies as its second argument. In this case, the dependency is getData, which means the side effect will be triggered whenever the getData prop changes.
+
+The callback function inside the useEffect hook is an asynchronous function that fetches the resource data using the getData function. It awaits the result of the getData function and then updates the resource state variable with the fetched data using the setResource function.
+
+The component returns JSX code wrapped in a fragment (<>...</>) to render multiple elements without a wrapper element. Inside the JSX code, it uses the React.Children.map method to iterate over the children prop, which represents the child components passed to DataSource.
+
+For each child component, it checks if it is a valid React element using React.isValidElement. If it is, it clones the element and adds the loaded resource as a prop using React.cloneElement. This allows the child components to access and use the loaded resource data.
+
+Overall, the DataSource component provides a convenient way to fetch a resource from a URL and pass it as a prop to its child components. It encapsulates the logic for fetching and managing the resource data, making it reusable and modular.
